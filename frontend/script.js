@@ -30,9 +30,7 @@ const bgMusic = new Audio('assets/audio/Midnight_Pursuit.mp3');
 bgMusic.loop = true;
 bgMusic.volume = 0.4;
 
-const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-    ? 'http://localhost:3000' 
-    : 'https://your-hosted-backend.com';
+const API_BASE_URL = 'https://dino-rush-api.onrender.com';
 
 
 let isJumping = false;
