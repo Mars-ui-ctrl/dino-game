@@ -114,12 +114,14 @@ const spawnObstacle = () => {
 const moveObstacle = () => {
     obstacleTimer = setInterval(() => {
         const cacti = document.querySelectorAll('.cactus');
+        const responsive = gameArea.offsetWidth / 1000;
+        const actualSpeed = currentSpeed * responsive;
         cacti.forEach(cactus => {
             let currentLeft = parseInt(cactus.style.left);
             if (currentLeft < -50) {
                 cactus.remove();
             } else {
-                cactus.style.left = (currentLeft - currentSpeed) + "px";
+                cactus.style.left = (currentLeft - actualSpeed) + "px";
             }
         });
     }, 20);
