@@ -2,7 +2,7 @@ import express, { json } from 'express';
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
 import connectDB from './mongo_conn.js';
-import Score from './models/score.js';
+import Score from './models/Score.js';
 import cors from 'cors';
 import User from "./models/User.js";
 import bcrypt from "bcryptjs";
