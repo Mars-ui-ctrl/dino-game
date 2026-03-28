@@ -91,7 +91,8 @@ document.addEventListener('touchstart', (e) =>{
     if(!gameOver.classList.contains('hidden')){
         restartGame();
     }
-}, {passive: false})
+}, {passive: false});
+
 const spawnObstacle = () => {
     if (!isGameRunning) return;
     const newCactus = document.createElement('div');
@@ -301,3 +302,14 @@ startGameBtn.addEventListener('click', () => {
     gameLoop();
     spawnObstacle();
 });
+startGameBtn.addEventListener('touchstart', (e)=>{
+    e.preventDefault();
+    startGameWrapper.classList.add('hidden');
+    isGameRunning = true;
+    bgMusic.currentTime = 0;
+    bgMusic.play();
+    moveObstacle();
+    startScore();
+    gameLoop();
+    spawnObstacle();
+})
